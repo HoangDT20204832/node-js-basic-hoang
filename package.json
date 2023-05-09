@@ -1,0 +1,23 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoangDT20204832/node-js-basic-hoang.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HoangDT20204832/node-js-basic-hoang/issues"
+  },
+  "homepage": "https://github.com/HoangDT20204832/node-js-basic-hoang#readme",
+  "dependencies": {
+    "express": "4.17.1"
+  }
+}
