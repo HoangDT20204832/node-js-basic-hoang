@@ -5,10 +5,16 @@
 
 //View engine: giúp xử lý các điều kiện logic trong file html ( vd như viết các vong lặp if else trong file html)
 // const express = require('express')
+//cấu hình file môi trường: npm install --save-exac dotenv@10.0.0
+//Static files: mục đích: chia sẻ dữ liệu trong file static ra ngoài cho người khác xem
 import express from 'express';
 import configViewEngine from './configs/viewEngine';
-const app = express()
-const port = 8000
+//để chạy câu lệnh process.env.PORT cần lệnh phía dưới
+require('dotenv').config();
+const app = express();
+//muốn kết nối với database thì phải đưa các cổng,... vào file môi trường
+const port = process.env.PORT || 8080;
+console.log(port);
 
 configViewEngine(app)
 app.get('/', function(req, res) {
