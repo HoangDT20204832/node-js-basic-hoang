@@ -5,7 +5,8 @@ let router = express.Router();
 
 const initWebRoute = (app) =>{
     router.get('/', homeController.getHomepage);
-
+    router.get('/detail/user/:id', homeController.getDetailPage);//:id/:name   :các tham số truyền vào
+    router.post('/create-new-user', homeController.createNewUser);
     router.get('/hmm', (req, res) => {
         res.send('Đâm nhau khum he')
     })

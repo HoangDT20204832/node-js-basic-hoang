@@ -13,10 +13,15 @@ import express from 'express';
 import configViewEngine from './configs/viewEngine';
 //để chạy câu lệnh process.env.PORT cần lệnh phía dưới
 import initWebRoute from './route/web';
+// import connection from './configs/connectDB'
 require('dotenv').config();
 const app = express();
 //muốn kết nối với database thì phải đưa các cổng,... vào file môi trường
 const port = process.env.PORT || 8080;
+//hỗ trợ gửi data từ phía client lên phái server 1 cách đơn giản, cũng như giảm thiểu hóa lượng data gưỉ lên server
+app.use(express.json())
+app.use(express.urlencoded({ extended: true}));
+
 console.log(port);
 
 //setup viewEngine
@@ -27,4 +32,4 @@ initWebRoute(app);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
-})
+}) 
