@@ -7,6 +7,9 @@ const initWebRoute = (app) =>{
     router.get('/', homeController.getHomepage);
     router.get('/detail/user/:id', homeController.getDetailPage);//:id/:name   :các tham số truyền vào
     router.post('/create-new-user', homeController.createNewUser);
+    router.post('/delete-user', homeController.deleteUser);
+    router.get('/edit-user/:id', homeController.getEditPage);
+    router.post('/update-user', homeController.postUpdateUser);
     router.get('/hmm', (req, res) => {
         res.send('Đâm nhau khum he')
     })
