@@ -53,6 +53,9 @@ let postUpdateUser = async(req,res) =>{
         [firstName,lastName,email,address,id]);
     return res.redirect('/');//khi ấn nút sẽ load về trang chủ
 }
+
+//voi html chi dung dc 2 giao thuc GET vaf POST; 
+//voi GET thi dung req.params , voi POST thi dung req.body;
 module.exports = {
     getHomepage,getDetailPage,createNewUser,deleteUser,getEditPage,postUpdateUser
 }
