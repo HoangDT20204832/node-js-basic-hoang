@@ -40,7 +40,7 @@ const initWebRoute = (app) =>{
 
     router.get('/upload-file', homeController.getUploadFilePage);
     router.post('/upload-profile-pic',upload.single('profile_pic'), homeController.handleUploadFile);
-    router.post('/upload-multiple-images',(req,res,next) =>{
+    router.post('/upload-multiple-images', (req,res,next) =>{//đây là 1 middleware viết trên router
         uploadMultiple(req,res, (err) =>{
             if(err instanceof multer.MulterError && err.code === 'LIMIT_UNEXPECTED_FILE'){
                  //handle multer file limit error here
